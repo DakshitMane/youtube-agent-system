@@ -1,0 +1,35 @@
+agents:
+  research_agent:
+    model: "gpt-4"
+    temperature: 0.7
+    max_tokens: 2000
+    
+  script_agent:
+    model: "gpt-4"
+    temperature: 0.8
+    max_tokens: 4000
+    
+  voice_agent:
+    model: "elevenlabs"
+    voice_id: "21m00Tcm4TlvDq8ikWAM"
+    
+tools:
+  google_search:
+    api_key: "${GOOGLE_API_KEY}"
+    search_engine_id: "${SEARCH_ENGINE_ID}"
+    
+  elevenlabs:
+    api_key: "${ELEVENLABS_API_KEY}"
+    
+  youtube:
+    api_key: "${YOUTUBE_API_KEY}"
+    
+memory:
+  redis_url: "redis://localhost:6379"
+  session_timeout: 3600
+  max_context_tokens: 128000
+  
+observability:
+  log_level: "INFO"
+  tracing_enabled: true
+  metrics_port: 8000
